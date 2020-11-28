@@ -13,7 +13,7 @@ export default class App extends Component {
       totalPages: "",
       totalItems: "",
       countries: [],
-      itemsPerPage: 10
+      itemsPerPage: 16
     };
   }
 
@@ -25,7 +25,7 @@ export default class App extends Component {
         this.setState({
           countries: data,
           totalItems: data.length,
-          totalPages: data.length/itemsPerPage
+          totalPages: Math.ceil(data.length/itemsPerPage)
         })
       })
       .catch(err => console.error(err))
