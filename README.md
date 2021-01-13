@@ -11,4 +11,8 @@ API for all country facts
 
 This React App has been deployed to Heroku.
 
-[Click here](https://world-countries-react-app.herokuapp.com/#) to see the UI output in Heroku.
+[Click here for Heroku](https://world-countries-react-app.herokuapp.com/#) to see the UI output in Heroku.
+
+### OR
+
+[Click here for Surge.sh](simplistic-person.surge.sh) to see the UI output in Surge.
