@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import ClickPagination from "./ClickPagination.jsx"
-import Countries from "./Countries.jsx"
+import Countries from "./components/Countries.jsx";
+import Footer from "./components/Footer.jsx";
+import Header from "./components/Header.jsx";
 import "./App.css";
 
-const url = "https://restcountries.eu/rest/v2/all"
+const url = "https://restcountries.eu/rest/v2/all";
 
 export default class App extends Component {
   constructor() {
@@ -13,45 +14,53 @@ export default class App extends Component {
       totalPages: "",
       totalItems: "",
       countries: [],
-      itemsPerPage: 16
+      itemsPerPage: 16,
     };
   }
 
   componentDidMount() {
     const { itemsPerPage } = this.state;
     fetch(url)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         this.setState({
           countries: data,
           totalItems: data.length,
-          totalPages: Math.ceil(data.length/itemsPerPage)
-        })
+          totalPages: Math.ceil(data.length / itemsPerPage),
+        });
       })
-      .catch(err => console.error(err))
+      .catch((err) => console.error(err));
   }
 
   changePagination = (page) => {
-    if (page >= 1 && page <=25) {
-      this.setState({ activePage: page})
+    if (page >= 1 && page <= 25) {
+      this.setState({ activePage: page });
     }
-  }
+  };
 
   render() {
-    const { activePage, totalItems, totalPages, countries, itemsPerPage } = this.state
+    const {
+      activePage,
+      totalItems,
+      totalPages,
+      countries,
+      itemsPerPage,
+    } = this.state;
     return (
       <div className="App">
-        <h3>WORLD COUNTRIES WITH REST API</h3>
-        <header>
-          <div id="total-count">{totalItems} countries</div>
-          <div id="page-count">Page {activePage}/{totalPages}</div>
-          <ClickPagination changePagination={this.changePagination} activePage={activePage} total_pages={totalPages}/>
-        </header>
-        <Countries countries={countries} activePage={activePage} itemsPerPage={itemsPerPage} />
-        <div id="api-link">
-          Rest api link: <a target="_new" href="https://restcountries.eu/rest/v2/all">https://restcountries.eu/rest/v2/all</a>  
-        </div>
+        <Header
+          activePage={activePage}
+          totalItems={totalItems}
+          totalPages={totalPages}
+          changePagination={this.changePagination}
+        />
+        <Countries
+          countries={countries}
+          activePage={activePage}
+          itemsPerPage={itemsPerPage}
+        />
+        <Footer />
       </div>
-    )
+    );
   }
 }
