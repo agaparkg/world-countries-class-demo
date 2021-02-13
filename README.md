@@ -1,6 +1,6 @@
 ## World Countries with Reactstrap Pagination
 
-![Output](world.png)
+![Output](./src/images/world.png)
 
 This app was built with React v17.0.1
 
