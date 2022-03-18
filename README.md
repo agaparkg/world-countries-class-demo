@@ -16,3 +16,5 @@ This React App has been deployed to Heroku.
 ### OR
 
 [Click here for Surge.sh](simplistic-person.surge.sh) to see the UI output in Surge.
+
+- If you see `404 Page Not Found` error for your project, take a look at this url: https://stackoverflow.com/questions/43855529/surge-deployed-react-app-getting-404-page-not-found
