@@ -4,7 +4,8 @@ import Footer from "./components/Footer.jsx";
 import Header from "./components/Header.jsx";
 import "./App.css";
 
-const url = "https://restcountries.eu/rest/v2/all";
+// const url = "https://restcountries.eu/rest/v2/all"; <-- Old URL
+const url = "https://restcountries.com/v3.1/all"; // <-- New URL
 
 export default class App extends Component {
   constructor() {

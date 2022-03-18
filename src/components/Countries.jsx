@@ -7,9 +7,9 @@ const Countries = (props) => {
   return (
     <div className="countries">
       {
-        slicedData.map(country => {
+        slicedData.map((country,ind) => {
           return (
-            <div key={country.numericCode}>
+            <div key={ind}>
               <SingleCountry propsCountry={country}/>
             </div>
           )
