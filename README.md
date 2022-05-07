@@ -1,11 +1,12 @@
 ## World Countries with Reactstrap Pagination
 
-![Output](./src/images/world.png)
+![Output1](./src/images/world1.png)
+![Output2](./src/images/world2.png)
 
 This app was built with React v17.0.1
 
 API for all country facts
-[https://restcountries.eu/rest/v2/all](https://restcountries.eu/rest/v2/all)
+[https://restcountries.com/v3.1/all](https://restcountries.com/v3.1/all)
 
 ## Deployment
 
